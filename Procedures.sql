@@ -96,7 +96,60 @@ RETURN
 END
 GO
 
+CREATE OR ALTER PROCEDURE Add_NewItem( 
+@name VARCHAR(50),
+@price INTEGER,
+@itemType VARCHAR(50),
+@slot VARCHAR(50),
+@mindmg INTEGER,
+@maxdmg INTEGER,
+@weapontype VARCHAR(50),
+@def INTEGER,
+@type VARCHAR(50),
+@amtorest INTEGER,
+@constype VARCHAR(50),
+@maxstack INTEGER
+)
 
+AS
+BEGIN
+
+INSERT INTO Item
+(
+    [Name],
+    [Price],
+    [ItemType],
+    [Slot],
+    [MinDamage],
+    [MaxDamage],
+    [WeaponType],
+    [Defense],
+    [Type],
+    [AmountToRestore],
+    [ConsumableType],
+    [MaxStack]
+)
+VALUES
+(
+    @name,
+    @price,
+    @itemtype,
+    @slot,
+    @mindmg,
+    @maxdmg,
+    @weapontype,
+    @def,
+    @type,
+    @amtorest,
+    @constype,
+    @maxstack
+)
+
+RETURN 
+END
+GO
+
+-- EXEC Add_NewItem 'Sharpened Dildo', 69, 'Weapon', 'Weapon', 16, 21, 'Warhammer', NULL, NULL, NULL, NULL, 1  
 -- EXEC Add_NewPlayer 'Elite', 10000,10000,10000,10000,10000,10000,100000000,1,'Mage';
 -- EXEC LoadEquipped 1;
 -- Exec GetArmorItem 1;
