@@ -22,7 +22,7 @@ INSERT INTO [WeaponType] ([Id]) Values
     ('Staff'),
     ('SpellBook');
 
-INSERT INTO [Type] ([Id]) Values 
+INSERT INTO [MATERIAL] ([Id]) Values 
     ('Cloth'),
     ('Leather'),
     ('Plate');
@@ -36,7 +36,7 @@ INSERT INTO [ConsumableType] ([Id]) Values
 
 
 -- SKAPA ITEM
-INSERT INTO [Item] ([Name], Price, ItemType, WeaponType, Slot, [Type], MinDamage, MaxDamage, Defense, AmountToRestore, ConsumableType, DropChance, MaxStack) 
+INSERT INTO [Item] ([Name], Price, ItemType, WeaponType, Slot, [Material], MinDamage, MaxDamage, Defense, AmountToRestore, ConsumableType, DropChance, MaxStack) 
 VALUES 
 ('PlateHelmet', 5, 'Armor', null, 'Helmet', 'Plate', null, null, 5, null, null, 20, 1), 
 ('PlateChest', 5, 'Armor', null, 'Chest', 'Plate', null, null, 5, null, null, 20, 1),
@@ -56,4 +56,5 @@ VALUES
 Insert into Equipment(PlayerId, Helmet,Chest,Gloves,Legs,Boots,Weapon)
 VALUES
 (1,1,2,3,4,5,6);
+
 

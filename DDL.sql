@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS Inventory, Item, Player, Equipment, Slot, ItemType, ConsumableType, WeaponType, [Type];
+DROP TABLE IF EXISTS Inventory, Item, Player, Equipment, Slot, ItemType, ConsumableType, WeaponType, [Material];
 
 CREATE TABLE [Player] (
   [Id] integer identity(1,1),
@@ -35,7 +35,7 @@ CREATE TABLE [WeaponType] (
   PRIMARY KEY ([Id])
 );
 
-CREATE TABLE [Type] (
+CREATE TABLE [Material] (
   [Id] Varchar(10),
   PRIMARY KEY ([Id])
 );
@@ -53,7 +53,7 @@ CREATE TABLE [Item] (
   [WeaponType] varchar(20) null,
 
   [Defense] int null,
-  [Type] varchar(10) null,
+  [Material] varchar(10) null,
 
   [AmountToRestore] int null,
   [ConsumableType] varchar(20) null,
@@ -72,8 +72,8 @@ CREATE TABLE [Item] (
     FOREIGN KEY ([WeaponType])
       REFERENCES [WeaponType]([Id]),
   CONSTRAINT [FK_Item.Type]
-    FOREIGN KEY ([Type])
-      REFERENCES [Type]([Id])
+    FOREIGN KEY ([Material])
+      REFERENCES [Material]([Id])
 );
 
 CREATE TABLE [Equipment] (
