@@ -98,4 +98,3 @@ CREATE TABLE [Inventory] (
     FOREIGN KEY ([ItemId])
       REFERENCES [Item]([Id])
 );
-
