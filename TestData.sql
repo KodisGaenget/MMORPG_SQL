@@ -22,7 +22,7 @@ SELECT ItemId, Amount FROM Player as p inner join Inventory as inv on inv.Player
 
 
 
-
+-- 
 
 
 

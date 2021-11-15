@@ -1,3 +1,4 @@
+--
 DROP TABLE IF EXISTS Inventory, Item, Player, Equipment, Slot, ItemType, ConsumableType, WeaponType, [Material];
 
 CREATE TABLE [Player] (

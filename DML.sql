@@ -1,4 +1,4 @@
---SKAPA PLAYER
+--SKAPA PLAYER--
 Insert into [Player]([Name],[OriginalHealth],[CurrentHealth],[Power],[Armor],[Damage],[Level],[CurrentExp],[Position],[Class]) values ('Zaai',1000,1000,1000,1000,1000,1000,100000, 1, 'Warrior');
 
 INSERT INTO ItemType ([Id]) Values 
