@@ -4,7 +4,8 @@ Insert into [Player]([Name],[OriginalHealth],[CurrentHealth],[Power],[Armor],[Da
 INSERT INTO ItemType ([Id]) Values 
     ('Armor'),
     ('Consumable'),
-    ('Weapon');
+    ('Weapon'),
+    ('Key');
 
 INSERT INTO [Slot] ([Id]) Values 
     ('Helmet'),
