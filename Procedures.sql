@@ -15,7 +15,7 @@ CREATE OR ALTER PROCEDURE GetArmorItem
 AS
 BEGIN
 
-Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot],[Defense],[Type] From Item where ItemType = 'Armor' AND Id = @id;
+Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot],[Defense],[Material] From Item where ItemType = 'Armor' AND Id = @id;
 
 
 RETURN 
@@ -106,7 +106,7 @@ CREATE OR ALTER PROCEDURE Add_NewItem(
 @maxdmg INTEGER,
 @weapontype VARCHAR(50),
 @def INTEGER,
-@type VARCHAR(50),
+@material VARCHAR(50),
 @amtorest INTEGER,
 @constype VARCHAR(50),
 @maxstack INTEGER
@@ -125,7 +125,7 @@ INSERT INTO Item
     [MaxDamage],
     [WeaponType],
     [Defense],
-    [Type],
+    [Material],
     [AmountToRestore],
     [ConsumableType],
     [MaxStack]
@@ -140,7 +140,7 @@ VALUES
     @maxdmg,
     @weapontype,
     @def,
-    @type,
+    @material,
     @amtorest,
     @constype,
     @maxstack
