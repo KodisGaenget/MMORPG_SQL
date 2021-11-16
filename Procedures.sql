@@ -34,6 +34,30 @@ RETURN
 END
 GO
 
+CREATE OR ALTER PROCEDURE GetConsumableItem
+@id int
+AS
+BEGIN
+
+Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot],[AmountToRestore],[ConsumableType],[MaxStack] From Item where ItemType = 'Consumable' AND Id = @id;
+
+
+RETURN 
+END
+GO
+
+CREATE OR ALTER PROCEDURE GetKeyItem
+@id int
+AS
+BEGIN
+
+Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot] From Item where ItemType = 'Key' AND Id = @id;
+
+
+RETURN 
+END
+GO
+
 CREATE OR ALTER PROCEDURE LoadEquipped
 @playerID int
 AS
@@ -50,6 +74,31 @@ where eq.PlayerId = @playerID;
 RETURN 
 END
 GO
+
+CREATE OR ALTER PROCEDURE UpdatePlayer
+@playerID int,
+@ohp INTEGER,
+@chp INTEGER,
+@power INTEGER,
+@armor INTEGER,
+@dmg INTEGER,
+@lvl INTEGER,
+@cexp INTEGER,
+@pos INTEGER,
+@class Varchar(15)
+
+AS
+BEGIN
+
+UPDATE Player Set OriginalHealth = @ohp, CurrentHealth = @chp, Power = @power, Armor = @armor, Damage = @dmg, [Level] = @lvl, CurrentExp = @cexp, Position = @pos, Class = @class WHERE Id = @playerID
+DECLARE @id INTEGER
+Set @Id = SCOPE_IDENTITY()
+Select @Id as Id;
+
+RETURN 
+END
+GO
+
 
 CREATE OR ALTER PROCEDURE Add_NewPlayer
 @name VARCHAR(40),
