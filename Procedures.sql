@@ -90,7 +90,7 @@ CREATE OR ALTER PROCEDURE UpdatePlayer
 AS
 BEGIN
 
-UPDATE Player Set OriginalHealth = @ohp, CurrentHealth = @chp, Power = @power, Armor = @armor, Damage = @dmg, [Level] = @lvl, CurrentExp = @cexp, Position = @pos, Class = @class WHERE Id = @playerID
+UPDATE [Character] Set OriginalHealth = @ohp, CurrentHealth = @chp, Power = @power, Armor = @armor, Damage = @dmg, [Level] = @lvl, CurrentExp = @cexp, Position = @pos, Class = @class WHERE Id = @playerID
 DECLARE @id INTEGER
 Set @Id = SCOPE_IDENTITY()
 Select @Id as Id;
@@ -115,7 +115,7 @@ CREATE OR ALTER PROCEDURE Add_NewPlayer
 AS
 BEGIN
 
-INSERT INTO Player (
+INSERT INTO [Character] (
     [Name],
     [OriginalHealth], 
     [CurrentHealth], 

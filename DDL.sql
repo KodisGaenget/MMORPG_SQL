@@ -1,19 +1,32 @@
 --
-DROP TABLE IF EXISTS Inventory, Item, Player, Equipment, Slot, ItemType, ConsumableType, WeaponType, [Material];
+DROP TABLE IF EXISTS Inventory, Item, [Character], Equipment, Slot, ItemType, ConsumableType, WeaponType, [Material], Room, Loot_Item, CharacterType;
 
-CREATE TABLE [Player] (
+CREATE TABLE [CharacterType] (
+  [Id] Varchar(10),
+  PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Character] (
   [Id] integer identity(1,1),
   [Name] varchar(40) UNIQUE not null,
   [OriginalHealth] integer not null,
   [CurrentHealth] integer not null,
   [Power] integer,
+  [CurrentPower] integer,
   [Armor] integer,
-  [Damage] integer,
+  [Penetration] integer,
+  [BaseDamage] integer,
   [Level] integer DEFAULT 1,
   [CurrentExp] integer DEFAULT 0,
   [Position] integer DEFAULT 1,
   [Class] varchar(15) not null,
-  PRIMARY KEY ([Id])
+  [CharacterType] VARCHAR(10),
+  [ExpValue] Integer,
+  [CoinPurse] Integer
+  PRIMARY KEY ([Id]),
+   CONSTRAINT [FK_Character.CharacterType]
+    FOREIGN KEY ([CharacterType])
+      REFERENCES [CharacterType]([Id])
 );
 
 CREATE TABLE [Slot] (
@@ -46,7 +59,6 @@ CREATE TABLE [Item] (
   [Name] varchar(50) not null,
   [Price] integer DEFAULT 0,
   [ItemType] varchar(30) not null,
-  [DropChance] int DEFAULT 0,
   [Slot] varchar(10) null,
 
   [MinDamage] int null,
@@ -99,3 +111,35 @@ CREATE TABLE [Inventory] (
     FOREIGN KEY ([ItemId])
       REFERENCES [Item]([Id])
 );
+
+CREATE TABLE Room
+(
+    [Room_Id] INT IDENTITY(1,1) PRIMARY KEY, 
+    [Name] VARCHAR(50), 
+    [Description] VARCHAR(MAX), 
+    [ExamineText] VARCHAR(MAX), 
+    [RoomExamined] BIT, 
+    [North] INT, 
+    [East] INT, 
+    [South] INT, 
+    [West] INT, 
+    [ItemInRoomID] INT, 
+    [ItemRequiredToEnter] INT,
+    [EnemyInRoom] INT
+)
+
+
+CREATE TABLE [Loot_Item] (
+  [Id] int,
+  [ItemId] int,
+  [EnemyId] int,
+  [Dropchance] int,
+  PRIMARY KEY ([Id]),
+  CONSTRAINT [FK_Loot_Item.ItemId]
+    FOREIGN KEY ([ItemId])
+      REFERENCES [Item]([Id]),
+  CONSTRAINT [FK_Loot_Item.EnemyId]
+    FOREIGN KEY ([EnemyId])
+      REFERENCES [Character]([Id])
+);
+

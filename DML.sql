@@ -1,5 +1,6 @@
 --SKAPA PLAYER--
-Insert into [Player]([Name],[OriginalHealth],[CurrentHealth],[Power],[Armor],[Damage],[Level],[CurrentExp],[Position],[Class]) values ('Zaai',1000,1000,1000,1000,1000,1000,100000, 1, 'Warrior');
+Insert into [Character]([Name],[OriginalHealth],[CurrentHealth],[Power],[Armor],[BaseDamage],[Level],[CurrentExp],[Position],[Class], [CharacterType], [CoinPurse]) values ('Zaai',1000,1000,1000,110,10,10,100000, 1, 'Warrior', 'Player',1000);
+Insert into [Character]([Name],[OriginalHealth],[CurrentHealth],[Power],[Armor],[Damage],[Level],[CurrentExp],[Position],[Class]) values ('Bert',1000,1000,1000,110,90,11,1180, 1, 'Warrior');
 
 INSERT INTO ItemType ([Id]) Values 
     ('Armor'),
@@ -27,6 +28,11 @@ INSERT INTO [MATERIAL] ([Id]) Values
     ('Cloth'),
     ('Leather'),
     ('Plate');
+
+INSERT INTO [CharacterType] ([Id]) Values 
+    ('Player'),
+    ('Enemy');
+
 
 INSERT INTO [ConsumableType] ([Id]) Values 
     ('HealthPotion'),
