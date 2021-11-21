@@ -15,7 +15,7 @@ CREATE OR ALTER PROCEDURE GetArmorItem
 AS
 BEGIN
 
-Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot],[Defense],[Material] From Item where ItemType = 'Armor' AND Id = @id;
+Select [Id],[Name],[Price],[ItemType],[Slot],[Defense],[Material] From Item where ItemType = 'Armor' AND Id = @id;
 
 
 RETURN 
@@ -27,7 +27,7 @@ CREATE OR ALTER PROCEDURE GetWeaponItem
 AS
 BEGIN
 
-Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot],[MinDamage],[MaxDamage],[WeaponType] From Item where ItemType = 'Weapon' AND Id = @id;
+Select [Id],[Name],[Price],[ItemType],[Slot],[MinDamage],[MaxDamage],[WeaponType] From Item where ItemType = 'Weapon' AND Id = @id;
 
 
 RETURN 
@@ -39,7 +39,7 @@ CREATE OR ALTER PROCEDURE GetConsumableItem
 AS
 BEGIN
 
-Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot],[AmountToRestore],[ConsumableType],[MaxStack] From Item where ItemType = 'Consumable' AND Id = @id;
+Select [Id],[Name],[Price],[ItemType],[Slot],[AmountToRestore],[ConsumableType],[MaxStack] From Item where ItemType = 'Consumable' AND Id = @id;
 
 
 RETURN 
@@ -51,7 +51,7 @@ CREATE OR ALTER PROCEDURE GetKeyItem
 AS
 BEGIN
 
-Select [Id],[Name],[Price],[ItemType],[DropChance],[Slot] From Item where ItemType = 'Key' AND Id = @id;
+Select [Id],[Name],[Price],[ItemType],[Slot] From Item where ItemType = 'Key' AND Id = @id;
 
 
 RETURN 

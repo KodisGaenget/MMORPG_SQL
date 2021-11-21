@@ -10,7 +10,7 @@ SELECT inv.ItemId FROM Player as p inner join Inventory as inv on inv.PlayerID =
 Select i.Name, i.ItemType from inventory inv inner join Item i on i.Id = inv.ItemId;
 
 select * from Item;
-select * from Player;
+select * from [Character];
 select * from Inventory;
 
 -- Delete Inventory where PlayerId = 1;
