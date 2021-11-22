@@ -56,7 +56,7 @@ VALUES
 ('Superior Potion', 500, 'Consumable', null, null, null, null, null, null, 500 ,'HealthPotion', 5),
 ('Lesser Restoring Potion', 10, 'Consumable', null, null, null, null, null, null, 50, 'PowerPotion', 5),
 ('Greater Restoring Potion', 100, 'Consumable', null, null, null, null, null, null, 100, 'PowerPotion', 5),
-('Greater Restoring Potion', 500, 'Consumable', null, null, null, null, null, null, 500, 'PowerPotion', 5);
+('Superior Restoring Potion', 500, 'Consumable', null, null, null, null, null, null, 500, 'PowerPotion', 5);
 -- ('Gold', 1, 'Consumable', null, null, null, null, null, 5, null, null, 60, 10000000)
 
 
