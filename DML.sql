@@ -62,6 +62,6 @@ VALUES
 
 Insert into Equipment(PlayerId, Helmet,Chest,Gloves,Legs,Boots,Weapon)
 VALUES
-(1,1,2,3,4,5,6);
+(11,NULL,NULL,NULL,NULL,NULL,33);
 
 

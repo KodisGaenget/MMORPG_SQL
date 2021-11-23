@@ -44,9 +44,14 @@ SELECT * FROM Item
 -- FROM Item  
 -- WHERE Id = 24 
 
+UPDATE [Character]
+SET CurrentHealth = 200, OriginalHealth = 200
+WHERE Id = 1
+
 SELECT * FROM [Character]
 SELECT * FROM [Item]
--- Living room, Kitchen, Storage room, Stairway, TOrture chamber, Prison cells, Observatory
+SELECT * FROM [Equipment]
+-- Living room, Kitchen, Storage room, Stairway, Torture chamber, Prison cells, Observatory
 
 
 
